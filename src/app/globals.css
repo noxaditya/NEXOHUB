@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, Cantarell;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reduce animation for low-end / mobile */
+@media (max-width: 768px) {
+  * {
+    transition-duration: 0.15s !important;
+    animation-duration: 0.15s !important;
+  }
+}
+
+/* Respect system reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
